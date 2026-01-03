@@ -1,7 +1,11 @@
-import Image from "next/image";
+import Hero from "@/components/Hero";
+import Sections from "@/components/Sections";
 
 export default function Home() {
   return (
-    <>Hey there my name is Revanth. REVLORD</>
+    <>
+      <Hero />
+      <Sections />
+    </>
   );
 }
