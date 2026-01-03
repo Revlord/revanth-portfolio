@@ -223,15 +223,15 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
 
 export default function ProjectsSection() {
   return (
-    <section id="work" className="py-32 relative">
+    <section id="work" className="py-20 md:py-32 relative">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
-        <div className="mb-20">
+        <div className="mb-12 md:mb-20">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-12 h-[1px] bg-emerald-500" />
             <span className="text-emerald-500 font-mono text-sm tracking-widest uppercase">Project Index</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
+          <h2 className="text-3xl md:text-5xl font-light text-white mb-6">
             Operational <span className="text-white/40">Archives</span>
           </h2>
           <p className="text-white/60 max-w-2xl font-light">

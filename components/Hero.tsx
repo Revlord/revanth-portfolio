@@ -68,17 +68,17 @@ export default function Hero() {
                   <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
                 </span>
                 <span className="text-[10px] tracking-[0.2em] text-white/70 uppercase font-medium">
-                  Available for work
+                  [ 4th Year CS Undergrad @ Georgia Tech ]
                 </span>
               </div>
 
-              <h1 className="text-6xl md:text-8xl font-medium tracking-tighter leading-[0.95] mb-8">
+              <h1 className="text-5xl md:text-8xl font-medium tracking-tighter leading-[0.95] mb-8">
                 Revanth <br />
                 <span className="text-white/30">Burramukku</span>
               </h1>
 
               <p className="text-base md:text-lg text-white/60 max-w-lg leading-relaxed font-light mb-10 border-l border-white/10 pl-6">
-                CS Undergrad at <span className="text-emerald-400">Georgia Tech</span>.
+                CS Undergrad at <span className="text-amber-400">Georgia Tech</span>.
                 <br />
                 Engineering high-performance systems at the intersection of data intelligence and user experience. 
                 Currently building AI-driven risk infrastructure at Lockchain.
@@ -104,17 +104,17 @@ export default function Hero() {
             </div>
 
             {/* Stats / Tech Stack Row */}
-            <div className="hero-in mt-16 flex gap-12 border-t border-white/10 pt-8">
+            <div className="hero-in mt-16 flex flex-wrap gap-12 border-t border-white/10 pt-8">
               <div>
-                <div className="text-2xl font-light text-white">3+</div>
-                <div className="text-[10px] tracking-widest text-white/40 uppercase mt-1">Years Exp</div>
+                <div className="text-2xl font-light text-white">Data Nerd</div>
+                <div className="text-[10px] tracking-widest text-white/40 uppercase mt-1">Math Addict</div>
               </div>
               <div>
-                <div className="text-2xl font-light text-white">15+</div>
-                <div className="text-[10px] tracking-widest text-white/40 uppercase mt-1">Projects</div>
+                <div className="text-2xl font-light text-white">ML+DL+NLP</div>
+                <div className="text-[10px] tracking-widest text-white/40 uppercase mt-1">+Full Stack Dev</div>
               </div>
               <div>
-                <div className="text-2xl font-light text-white">TS/C++</div>
+                <div className="text-2xl font-light text-white">TS • Python • C++</div>
                 <div className="text-[10px] tracking-widest text-white/40 uppercase mt-1">Core Stack</div>
               </div>
             </div>

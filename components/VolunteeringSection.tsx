@@ -64,16 +64,16 @@ export default function ActivitiesSection() {
   }, []);
 
   return (
-    <section id="activities" ref={ref} className="relative py-32">
+    <section id="activities" ref={ref} className="relative py-20 md:py-32">
       <div className="relative mx-auto max-w-7xl px-6">
         
         {/* Section Header */}
-        <div className="mb-20">
+        <div className="mb-12 md:mb-20">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-12 h-[1px] bg-emerald-500" />
             <span className="text-emerald-500 font-mono text-sm tracking-widest uppercase">Community Impact</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
+          <h2 className="text-3xl md:text-5xl font-light text-white mb-6">
             Leadership & <span className="text-white/40">Activities</span>
           </h2>
           <p className="text-white/60 max-w-2xl font-light">
@@ -81,7 +81,7 @@ export default function ActivitiesSection() {
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 grid-cols-1 md:grid-cols-3">
           {items.map((it, i) => (
             <a 
               key={i} 

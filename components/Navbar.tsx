@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { motion, useReducedMotion } from "motion/react";
-import { FileDown, Mail } from "lucide-react";
+import { motion, useReducedMotion, AnimatePresence } from "motion/react";
+import { FileDown, Mail, Menu, X } from "lucide-react";
 
 type NavItem = { id: string; label: string };
 
@@ -11,6 +11,7 @@ export default function Navbar() {
   const reduceMotion = useReducedMotion();
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState<string>("home");
+  const [isOpen, setIsOpen] = useState(false);
 
   const items: NavItem[] = useMemo(
     () => [
@@ -29,6 +30,14 @@ export default function Navbar() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isOpen]);
 
   useEffect(() => {
     const sections = items
@@ -62,13 +71,13 @@ export default function Navbar() {
           ].join(" ")}
         >
           {/* Logo */}
-          <Link href="#home" className="group flex items-center gap-3">
+          <Link href="#home" className="group flex items-center gap-3 z-50" onClick={() => setIsOpen(false)}>
             <div className="text-sm tracking-widest text-white/90 uppercase font-medium">
               Revanth
             </div>
           </Link>
 
-          {/* Navigation */}
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             {items.map((it) => {
               const isActive = active === it.id;
@@ -94,8 +103,8 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Actions */}
-          <div className="flex items-center gap-4">
+          {/* Desktop Actions */}
+          <div className="hidden md:flex items-center gap-4">
             <a
               href="/RevanthBurramukku.pdf"
               className="hidden sm:inline-flex items-center gap-2 text-xs text-white/60 hover:text-white transition-colors uppercase tracking-wider"
@@ -111,8 +120,59 @@ export default function Navbar() {
               <span>Contact</span>
             </a>
           </div>
+
+          {/* Mobile Menu Toggle */}
+          <button 
+            className="md:hidden relative z-50 p-2 text-white/80 hover:text-white"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl pt-32 px-6 md:hidden flex flex-col"
+          >
+            <nav className="flex flex-col gap-8 items-center">
+              {items.map((it) => (
+                <a
+                  key={it.id}
+                  href={`#${it.id}`}
+                  onClick={() => setIsOpen(false)}
+                  className="text-2xl font-light tracking-widest uppercase text-white/80 hover:text-white transition-colors"
+                >
+                  {it.label}
+                </a>
+              ))}
+              
+              <div className="w-12 h-[1px] bg-white/10 my-4" />
+              
+              <a
+                href="/RevanthBurramukku.pdf"
+                className="flex items-center gap-2 px-6 py-3 text-xs font-bold tracking-widest uppercase text-white border border-white/20 hover:bg-white/5 transition-all duration-300"
+              >
+                <FileDown className="h-4 w-4" />
+                Resume
+              </a>
+              
+              <a
+                href="mailto:revanthreddy4666@gmail.com"
+                className="flex items-center gap-2 text-white/60 hover:text-white transition-colors mt-4"
+              >
+                <Mail className="h-5 w-5" />
+                <span className="text-sm tracking-wider">Get in touch</span>
+              </a>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

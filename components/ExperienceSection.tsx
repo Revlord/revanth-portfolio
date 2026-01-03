@@ -57,7 +57,7 @@ export default function ExperienceSection() {
   const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
 
   return (
-    <section id="experience" ref={containerRef} className="py-32 relative overflow-hidden">
+    <section id="experience" ref={containerRef} className="py-20 md:py-32 relative overflow-hidden">
       {/* Background Art */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-emerald-500/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
@@ -66,18 +66,18 @@ export default function ExperienceSection() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="mb-32">
+        <div className="mb-20 md:mb-32">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-12 h-[1px] bg-emerald-500" />
             <span className="text-emerald-500 font-mono text-sm tracking-widest uppercase">Career History</span>
           </div>
-          <h2 className="text-5xl md:text-7xl font-light text-white tracking-tight">
+          <h2 className="text-4xl md:text-7xl font-light text-white tracking-tight">
             Professional <br />
             <span className="text-white/20">Experience</span>
           </h2>
         </div>
 
-        <div className="flex flex-col gap-32">
+        <div className="flex flex-col gap-16 md:gap-32">
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
@@ -94,7 +94,7 @@ export default function ExperienceSection() {
                 <div className={`absolute inset-0 bg-gradient-to-br ${exp.color} opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
                 
                 {/* Left: Content (Spans 5 cols) */}
-                <div className="lg:col-span-5 p-8 md:p-12 flex flex-col justify-center relative z-10">
+                <div className="lg:col-span-5 p-6 md:p-12 flex flex-col justify-center relative z-10">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-mono text-emerald-400">
                       {exp.period}
