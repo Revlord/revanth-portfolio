@@ -41,24 +41,40 @@ export default function Navbar() {
 
   useEffect(() => {
     const sections = items
-      .map((i) => document.getElementById(i.id))
+      .map((item) => document.getElementById(item.id))
       .filter(Boolean) as HTMLElement[];
 
     if (!sections.length) return;
 
-    const io = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => (b.intersectionRatio ?? 0) - (a.intersectionRatio ?? 0))[0];
+    const updateActiveSection = () => {
+      const probeY = window.scrollY + window.innerHeight * 0.35;
+      let currentId = sections[0].id;
 
-        if (visible?.target?.id) setActive(visible.target.id);
-      },
-      { root: null, threshold: [0.15, 0.25, 0.4, 0.6] }
-    );
+      for (const section of sections) {
+        const top = section.offsetTop;
+        const bottom = top + section.offsetHeight;
 
-    sections.forEach((s) => io.observe(s));
-    return () => io.disconnect();
+        if (probeY >= top && probeY < bottom) {
+          currentId = section.id;
+          break;
+        }
+
+        if (probeY >= top) {
+          currentId = section.id;
+        }
+      }
+
+      setActive((prev) => (prev === currentId ? prev : currentId));
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+    window.addEventListener("resize", updateActiveSection);
+
+    return () => {
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("resize", updateActiveSection);
+    };
   }, [items]);
 
   return (
@@ -85,6 +101,10 @@ export default function Navbar() {
                 <a
                   key={it.id}
                   href={`#${it.id}`}
+                  onClick={() => {
+                    setActive(it.id);
+                    setIsOpen(false);
+                  }}
                   className={[
                     "relative text-xs tracking-widest uppercase transition-colors duration-300",
                     isActive ? "text-white" : "text-white/50 hover:text-white/80",
@@ -145,7 +165,10 @@ export default function Navbar() {
                 <a
                   key={it.id}
                   href={`#${it.id}`}
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    setActive(it.id);
+                    setIsOpen(false);
+                  }}
                   className="text-2xl font-light tracking-widest uppercase text-white/80 hover:text-white transition-colors"
                 >
                   {it.label}

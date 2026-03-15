@@ -77,11 +77,10 @@ export default function Hero() {
                 <span className="text-white/30">Burramukku</span>
               </h1>
 
-              <p className="text-base md:text-lg text-white/60 max-w-lg leading-relaxed font-light mb-10 border-l border-white/10 pl-6">
+              <p className="text-lg md:text-xl text-white/60 max-w-lg leading-relaxed font-light mb-10 border-l border-white/10 pl-6">
                 CS Undergrad at <span className="text-amber-400">Georgia Tech</span>.
                 <br />
-                Engineering high-performance systems at the intersection of data intelligence and user experience. 
-                Currently building AI-driven risk infrastructure at Lockchain.
+                Focused on clean aesthetics and high-performance engineering.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -103,19 +102,33 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Stats / Tech Stack Row */}
-            <div className="hero-in mt-16 flex flex-wrap gap-12 border-t border-white/10 pt-8">
-              <div>
-                <div className="text-2xl font-light text-white">Data Nerd</div>
-                <div className="text-[10px] tracking-widest text-white/40 uppercase mt-1">Math Addict</div>
-              </div>
-              <div>
-                <div className="text-2xl font-light text-white">ML+DL+NLP</div>
-                <div className="text-[10px] tracking-widest text-white/40 uppercase mt-1">+Full Stack Dev</div>
-              </div>
-              <div>
-                <div className="text-2xl font-light text-white">TS • Python • C++</div>
-                <div className="text-[10px] tracking-widest text-white/40 uppercase mt-1">Core Stack</div>
+            <div className="hero-in mt-16 border-t border-white/10 pt-8">
+              <p className="text-xl md:text-2xl font-light text-white/90 tracking-tight mb-8">
+                Engineering transformed to art through attention and creativity.
+              </p>
+
+              {/* Linear Algebra Transformation Art */}
+              <div className="flex items-center gap-3 md:gap-5 font-mono text-xs md:text-sm text-white/50 w-fit p-4 rounded bg-white/5 border border-white/10">
+                {/* 1x2 Transformation Matrix (Row Vector) */}
+                <div className="flex items-center border-l-2 border-r-2 border-white/20 px-3 py-2 gap-4">
+                  <span className="text-emerald-400/90">ATTENTION</span>
+                  <span className="text-emerald-400/90">CREATIVITY</span>
+                </div>
+
+                <span className="text-white/30 text-lg">·</span>
+
+                {/* 2x1 Input Vector (Column Vector) */}
+                <div className="flex flex-col items-center border-l-2 border-r-2 border-white/20 px-3 py-1 gap-2">
+                  <span className="text-emerald-400/90">ENGINEERING</span>
+                  <span className="text-emerald-400/90">CODE</span>
+                </div>
+
+                <span className="text-white/30 text-lg">=</span>
+
+                {/* 1x1 Output Matrix (Scalar) */}
+                <div className="flex items-center border-l-2 border-r-2 border-emerald-500/30 px-4 py-2 bg-emerald-500/5">
+                  <span className="text-emerald-400 font-bold tracking-widest">ART</span>
+                </div>
               </div>
             </div>
           </div>

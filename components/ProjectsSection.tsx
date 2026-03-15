@@ -21,6 +21,8 @@ interface Project {
   links: {
     site?: string;
     github?: string;
+    devpost?: string;
+    github2?: string;
   };
   images: string[];
 }
@@ -31,7 +33,7 @@ const projects: Project[] = [
     role: "AI ATL 2024 Winner",
     stack: ["React", "FastAPI", "MongoDB", "Terraform", "AWS EC2", "Gemini/Claude API"],
     description: "Built Chrome extension analyzing Terms & Conditions in real-time; one-click scanning extracts legal links, scores privacy risk across 10 GDPR/CCPA parameters. Engineered FastAPI backend with MongoDB caching reducing latency by 99% for repeat analyses.",
-    links: { github: "#" },
+    links: { devpost: "https://devpost.com/software/privacy-extension-your-privacy-rights-at-a-glance" },
     images: [
       "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop", // Tech/Cybersecurity vibe
       "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1470&auto=format&fit=crop"
@@ -42,7 +44,7 @@ const projects: Project[] = [
     role: "Founding Engineer",
     stack: ["Next.js", "TypeScript", "Java", "SpringBoot", "Supabase"],
     description: "Fullstack competition portal serving 200+ GT students for deploying algorithmic bots in real-time strategic matches. Owned frontend, REST APIs, auth, and leaderboard persistence. Engineered game engine integrations and bot simulation workflows.",
-    links: { site: "#" },
+    links: { site: "https://bytefight.org/" },
     images: [
       "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop", // Gaming/Esports vibe
       "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2071&auto=format&fit=crop"
@@ -53,7 +55,7 @@ const projects: Project[] = [
     role: "Full Stack Engineer",
     stack: ["React Native", "FastAPI", "PostgreSQL", "WebSockets", "Docker"],
     description: "Real-time multiplayer betting platform with low-latency WebSocket synchronization across mobile clients. Designed dynamic wagering algorithm balancing risk/reward mechanics. Built scalable FastAPI backend integrated with Supabase/PostgreSQL.",
-    links: { github: "#" },
+    links: { devpost: "https://devpost.com/software/raptor-bets" },
     images: [
       "https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=2232&auto=format&fit=crop", // Crypto/Finance vibe
       "https://images.unsplash.com/photo-1642104704074-907c0698cbd9?q=80&w=2232&auto=format&fit=crop"
@@ -64,7 +66,7 @@ const projects: Project[] = [
     role: "Contributor (ByteDance/PICO)",
     stack: ["React", "visionOS", "XR"],
     description: "Contributed to open-source SDK through bug reproductions and feature validation; collaborated directly with core maintainers to debug cross-platform edge cases for production-ready visionOS deployment.",
-    links: { github: "#" },
+    links: { github: "https://github.com/Revlord/gtxr/tree/WebS", github2: "https://github.com/webspatial/webspatial-sdk" },
     images: [
       "https://images.unsplash.com/photo-1617802690992-15d93263d3a9?q=80&w=2070&auto=format&fit=crop", // VR/AR vibe
       "https://images.unsplash.com/photo-1592478411213-61535fdd861d?q=80&w=2070&auto=format&fit=crop"
@@ -75,7 +77,7 @@ const projects: Project[] = [
     role: "Undergraduate Researcher",
     stack: ["Unity3D", "C#", "Meta Quest Pro", "XR Interaction Toolkit"],
     description: "Developed Unity3D/C# eye-tracking pipeline for Meta Quest Pro capturing gaze data at 72-90Hz with sub-2° accuracy. Deployed in accessibility study with 200+ participants including RIT deaf/hard-of-hearing students. Enabled spatial captioning research for deaf/hard-of-hearing users.",
-    links: { site: "https://ccl.gatech.edu" },
+    links: { site: "https://researchexpo.ipat.gatech.edu/captioning-glass-captioning-eyeglasses-deaf-and-hard-hearing" },
     images: [
       "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=2078&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1555255707-c07966088b7b?q=80&w=2070&auto=format&fit=crop"
@@ -190,7 +192,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
             {/* Actions */}
             <div className="flex gap-4 pt-6 border-t border-white/10">
               {project.links.site && (
-                <a 
+                <a
                   href={project.links.site}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -201,8 +203,20 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
                   <ArrowUpRight className="w-3 h-3" />
                 </a>
               )}
+              {project.links.devpost && (
+                <a
+                  href={project.links.devpost}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white hover:text-emerald-400 transition-colors"
+                >
+                  <Globe className="w-3 h-3" />
+                  Devpost Link
+                  <ArrowUpRight className="w-3 h-3" />
+                </a>
+              )}
               {project.links.github && (
-                <a 
+                <a
                   href={project.links.github}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -210,6 +224,18 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
                 >
                   <Github className="w-3 h-3" />
                   Source Code
+                  <ArrowUpRight className="w-3 h-3" />
+                </a>
+              )}
+              {project.links.github2 && (
+                <a
+                  href={project.links.github2}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white hover:text-emerald-400 transition-colors"
+                >
+                  <Github className="w-3 h-3" />
+                  WebSpatial SDK
                   <ArrowUpRight className="w-3 h-3" />
                 </a>
               )}

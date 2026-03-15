@@ -30,7 +30,7 @@ export default function Footer() {
               <Mail className="h-5 w-5" />
             </a>
             <a
-              href="https://www.linkedin.com/in/revanth-burramukku-964a98259/"
+              href="https://www.linkedin.com/in/revbr"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/60 hover:text-white transition-colors"
@@ -39,7 +39,7 @@ export default function Footer() {
               <Linkedin className="h-5 w-5" />
             </a>
             <a
-              href="https://github.com/Revanth-Burramukku"
+              href="https://github.com/Revlord"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/60 hover:text-white transition-colors"

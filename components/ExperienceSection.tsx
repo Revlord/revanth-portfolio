@@ -79,13 +79,16 @@ export default function ExperienceSection() {
 
         <div className="flex flex-col gap-16 md:gap-32">
           {experiences.map((exp, index) => (
-            <motion.div
+            <motion.a
               key={index}
+              href={exp.link}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="group relative"
+              className="group relative block"
             >
               {/* Large Card Container */}
               <div className="relative grid lg:grid-cols-12 gap-8 lg:gap-0 border border-white/10 bg-white/[0.02] backdrop-blur-sm rounded-3xl overflow-hidden">
@@ -110,11 +113,7 @@ export default function ExperienceSection() {
                   </h3>
                   <div className="text-lg text-white/60 mb-8 font-light flex items-center gap-2">
                     {exp.role}
-                    {exp.link && (
-                      <a href={exp.link} target="_blank" rel="noopener noreferrer" className="opacity-0 group-hover:opacity-100 transition-opacity text-emerald-400">
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
-                    )}
+                    <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-emerald-400" />
                   </div>
 
                   <div className="space-y-4">
@@ -163,7 +162,7 @@ export default function ExperienceSection() {
               <div className="absolute -top-20 -left-10 text-[200px] font-bold text-white/[0.02] pointer-events-none select-none font-mono">
                 0{index + 1}
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>
