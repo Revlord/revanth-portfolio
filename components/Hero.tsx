@@ -68,7 +68,7 @@ export default function Hero() {
                   <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
                 </span>
                 <span className="text-[10px] tracking-[0.2em] text-white/70 uppercase font-medium">
-                  [ 4th Year CS Undergrad @ Georgia Tech ]
+                  [ CS @ Georgia Tech · Graduating Dec 2026 ]
                 </span>
               </div>
 
@@ -78,9 +78,9 @@ export default function Hero() {
               </h1>
 
               <p className="text-lg md:text-xl text-white/60 max-w-lg leading-relaxed font-light mb-10 border-l border-white/10 pl-6">
-                CS Undergrad at <span className="text-amber-400">Georgia Tech</span>.
+                CS at <span className="text-amber-400">Georgia Tech</span>.
                 <br />
-                Focused on clean aesthetics and high-performance engineering.
+                Backend engineer at Lockchain, building durable cloud workflows and AI pipelines on AWS.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -93,7 +93,7 @@ export default function Hero() {
                 </a>
 
                 <a
-                  href="/RevanthBurramukku.pdf"
+                  href="/Revanth_Burramukku_Resume.pdf"
                   className="inline-flex items-center gap-2 px-8 py-4 text-xs font-bold tracking-widest uppercase text-white border border-white/20 hover:bg-white/5 transition-all duration-300"
                 >
                   <FileDown className="h-3 w-3" />

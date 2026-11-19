@@ -3,7 +3,7 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Code2, Terminal, Cloud } from "lucide-react";
+import { Brain, Code2, Terminal, Cloud } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -226,7 +226,7 @@ export default function CapabilitiesSection() {
                 </div>
                 
                 <div className="flex flex-wrap gap-3">
-                  {["Python", "C++", "TypeScript", "Java", "C#", "SQL", "Swift", "Bash"].map((tech, i) => (
+                  {["TypeScript", "JavaScript", "HTML", "CSS", "Python", "C", "C++", "Java", "C#", "Bash"].map((tech, i) => (
                     <span 
                       key={tech} 
                       className="px-4 py-2 text-sm text-white/70 border border-white/10 bg-black/40 hover:border-emerald-500/50 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all duration-300 cursor-default"
@@ -256,7 +256,7 @@ export default function CapabilitiesSection() {
                 </div>
                 
                 <div className="flex flex-wrap gap-3">
-                  {["Next.js", "React", "React Native", "FastAPI", ".NET Core", "Angular", "Node.js", "SpringBoot"].map((tech, i) => (
+                  {["FastAPI", "Spring Boot", "Next.js", "React"].map((tech, i) => (
                     <span 
                       key={tech} 
                       className="px-4 py-2 text-sm text-white/70 border border-white/10 bg-black/40 hover:border-emerald-500/50 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all duration-300 cursor-default"
@@ -273,7 +273,7 @@ export default function CapabilitiesSection() {
               <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-white/20 group-hover:border-emerald-500 transition-colors" />
             </div>
 
-            {/* Infrastructure */}
+            {/* Cloud & Data */}
             <div className="group relative p-8 border border-white/10 bg-white/[0.02] backdrop-blur-sm overflow-hidden hover:bg-white/[0.04] transition-all duration-500" data-reveal>
               <div className="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-100 transition-opacity">
                 <Cloud className="w-12 h-12 text-emerald-500 rotate-12" />
@@ -282,11 +282,41 @@ export default function CapabilitiesSection() {
               <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-8 h-[1px] bg-emerald-500" />
-                  <h3 className="text-lg font-mono text-emerald-400 tracking-widest uppercase">Infrastructure</h3>
+                  <h3 className="text-lg font-mono text-emerald-400 tracking-widest uppercase">Cloud & Data</h3>
                 </div>
                 
                 <div className="flex flex-wrap gap-3">
-                  {["AWS", "Docker", "PostgreSQL", "MongoDB", "Supabase", "Git", "Unity"].map((tech, i) => (
+                  {["AWS Lambda", "DynamoDB", "SQS", "S3", "Fargate", "EC2", "Docker", "Terraform", "PostgreSQL", "MongoDB", "Git"].map((tech, i) => (
+                    <span 
+                      key={tech} 
+                      className="px-4 py-2 text-sm text-white/70 border border-white/10 bg-black/40 hover:border-emerald-500/50 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all duration-300 cursor-default"
+                      style={{ transitionDelay: `${i * 50}ms` }}
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Decorative Corners */}
+              <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-white/20 group-hover:border-emerald-500 transition-colors" />
+              <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-white/20 group-hover:border-emerald-500 transition-colors" />
+            </div>
+
+            {/* AI & ML */}
+            <div className="group relative p-8 border border-white/10 bg-white/[0.02] backdrop-blur-sm overflow-hidden hover:bg-white/[0.04] transition-all duration-500" data-reveal>
+              <div className="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-100 transition-opacity">
+                <Brain className="w-12 h-12 text-emerald-500 rotate-12" />
+              </div>
+              
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-8 h-[1px] bg-emerald-500" />
+                  <h3 className="text-lg font-mono text-emerald-400 tracking-widest uppercase">AI & ML</h3>
+                </div>
+                
+                <div className="flex flex-wrap gap-3">
+                  {["PyTorch", "pydantic-ai", "OpenAI API", "RAG", "NumPy", "pandas", "scikit-learn"].map((tech, i) => (
                     <span 
                       key={tech} 
                       className="px-4 py-2 text-sm text-white/70 border border-white/10 bg-black/40 hover:border-emerald-500/50 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all duration-300 cursor-default"

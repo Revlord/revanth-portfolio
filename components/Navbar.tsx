@@ -126,7 +126,7 @@ export default function Navbar() {
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center gap-4">
             <a
-              href="/RevanthBurramukku.pdf"
+              href="/Revanth_Burramukku_Resume.pdf"
               className="hidden sm:inline-flex items-center gap-2 text-xs text-white/60 hover:text-white transition-colors uppercase tracking-wider"
             >
               <FileDown className="h-4 w-4" />
@@ -178,7 +178,7 @@ export default function Navbar() {
               <div className="w-12 h-[1px] bg-white/10 my-4" />
               
               <a
-                href="/RevanthBurramukku.pdf"
+                href="/Revanth_Burramukku_Resume.pdf"
                 className="flex items-center gap-2 px-6 py-3 text-xs font-bold tracking-widest uppercase text-white border border-white/20 hover:bg-white/5 transition-all duration-300"
               >
                 <FileDown className="h-4 w-4" />

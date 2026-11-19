@@ -29,25 +29,47 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Privacy Pilot",
-    role: "AI ATL 2024 Winner",
-    stack: ["React", "FastAPI", "MongoDB", "Terraform", "AWS EC2", "Gemini/Claude API"],
-    description: "Built Chrome extension analyzing Terms & Conditions in real-time; one-click scanning extracts legal links, scores privacy risk across 10 GDPR/CCPA parameters. Engineered FastAPI backend with MongoDB caching reducing latency by 99% for repeat analyses.",
-    links: { devpost: "https://devpost.com/software/privacy-extension-your-privacy-rights-at-a-glance" },
-    images: [
-      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop", // Tech/Cybersecurity vibe
-      "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1470&auto=format&fit=crop"
-    ]
-  },
-  {
     title: "ByteFight",
     role: "Founding Engineer",
-    stack: ["Next.js", "TypeScript", "Java", "SpringBoot", "Supabase"],
-    description: "Fullstack competition portal serving 200+ GT students for deploying algorithmic bots in real-time strategic matches. Owned frontend, REST APIs, auth, and leaderboard persistence. Engineered game engine integrations and bot simulation workflows.",
+    stack: ["Java", "Spring Boot", "Next.js", "TypeScript", "Supabase"],
+    description: "Built Georgia Tech's annual bot-programming competition, where students code AI agents that battle head-to-head in a modified game, ranked on a season-long Elo ladder. Developed the game engine, match simulator, and frontend maps, running 2000+ matches for 200+ students; adopted into Georgia Tech's CS 3600 (Intro to AI) coursework.",
     links: { site: "https://bytefight.org/" },
     images: [
       "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop", // Gaming/Esports vibe
       "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2071&auto=format&fit=crop"
+    ]
+  },
+  {
+    title: "OS & Networking Simulators",
+    role: "CS 2200 Systems, Georgia Tech",
+    stack: ["C", "pthreads"],
+    description: "Implemented a multi-CPU process scheduler with pthreads supporting FCFS, Round Robin, preemptive Priority, and SRTF, synchronizing a shared ready queue with mutexes and condition variables to eliminate race conditions. Built a reliable transport protocol over a lossy simulated network: packet segmentation and reassembly, checksums, ACK/NACK stop-and-wait with retransmission, and thread-safe sender/receiver threads with no memory leaks.",
+    links: {},
+    images: [
+      "https://images.unsplash.com/photo-1629654297299-c8506221ca97?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=2070&auto=format&fit=crop"
+    ]
+  },
+  {
+    title: "Weight-Agnostic Forecasting",
+    role: "Deep Learning Project, Georgia Tech",
+    stack: ["PyTorch", "Python"],
+    description: "Trained neural networks for 24-hour electricity forecasting by learning which connections to keep, never updating a weight value; matched a published baseline (DLinear) and beat standard training by 4%. Built a reproducible pipeline with 450+ tests and 600+ experiment runs, reproducing published benchmarks within 0.1%.",
+    links: {},
+    images: [
+      "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?q=80&w=2070&auto=format&fit=crop"
+    ]
+  },
+  {
+    title: "Privacy Pilot",
+    role: "AI ATL 2024 Winner",
+    stack: ["React", "FastAPI", "MongoDB", "Terraform", "AWS EC2", "Gemini/Claude API"],
+    description: "Shipped a Chrome extension scoring Terms & Conditions across 10 GDPR/CCPA risk factors. Built a FastAPI backend with MongoDB caching and Gemini/Claude fallback, deployed on AWS EC2 with Terraform.",
+    links: { devpost: "https://devpost.com/software/privacy-extension-your-privacy-rights-at-a-glance" },
+    images: [
+      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop", // Tech/Cybersecurity vibe
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1470&auto=format&fit=crop"
     ]
   },
   {
@@ -190,6 +212,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
             </div>
 
             {/* Actions */}
+            {Object.keys(project.links).length > 0 && (
             <div className="flex gap-4 pt-6 border-t border-white/10">
               {project.links.site && (
                 <a
@@ -240,6 +263,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
                 </a>
               )}
             </div>
+            )}
           </div>
         </div>
       </div>

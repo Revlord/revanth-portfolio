@@ -18,10 +18,10 @@ const items = [
         link: "https://immersegt.org"
     },
     {
-        role: "Tech Lead",
+        role: "Founding Engineer",
         org: "BYTEFIGHTAI",
         icon: Trophy,
-        desc: "Contributed to develop a competitive programming platform for Georgia Tech students, facilitating algorithmic bot competitions. Akin to BattleCode at MIT",
+        desc: "Built Georgia Tech's annual bot-programming competition, akin to MIT's Battlecode. 2000+ matches for 200+ students, now adopted into CS 3600 (Intro to AI) coursework.",
         status: "[ Alumni ]",
         link: "https://bytefight.org"
     },

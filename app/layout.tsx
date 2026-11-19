@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Revanth Reddy Burramukku",
-  description: "Revanth Reddy Burramukku's Portfolio",
+  description: "Revanth Reddy Burramukku: Georgia Tech CS (Dec 2026) and Backend Engineering Intern at Lockchain, building durable cloud workflows, AI pipelines, and full-stack products.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -18,12 +18,18 @@ export default function GeometricBackground() {
     // Shift camera slightly to the left so the center of the scene (0,0,0) appears on the right
     camera.position.x = -10; 
 
-    // Renderer setup
-    const renderer = new THREE.WebGLRenderer({ 
-      alpha: true, 
-      antialias: true,
-      powerPreference: "high-performance"
-    });
+    // Renderer setup. WebGL can be unavailable (hardware acceleration off, locked-down machines);
+    // skip the background instead of crashing the page.
+    let renderer: THREE.WebGLRenderer;
+    try {
+      renderer = new THREE.WebGLRenderer({ 
+        alpha: true, 
+        antialias: true,
+        powerPreference: "high-performance"
+      });
+    } catch {
+      return;
+    }
     renderer.setSize(container.clientWidth, container.clientHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     container.appendChild(renderer.domElement);
