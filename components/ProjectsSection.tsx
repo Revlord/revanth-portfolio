@@ -32,7 +32,7 @@ const projects: Project[] = [
     title: "ByteFight",
     role: "Founding Engineer",
     stack: ["Java", "Spring Boot", "Next.js", "TypeScript", "Supabase"],
-    description: "Built Georgia Tech's annual bot-programming competition, where students code AI agents that battle head-to-head in a modified game, ranked on a season-long Elo ladder. Developed the game engine, match simulator, and frontend maps, running 2000+ matches for 200+ students; adopted into Georgia Tech's CS 3600 (Intro to AI) coursework.",
+    description: "Georgia Tech's annual bot-programming competition. Students write AI agents that play each other head-to-head, ranked on a season-long Elo ladder. I built the game engine, match simulator, and frontend maps. It's now part of CS 3600 (Intro to AI).",
     links: { site: "https://bytefight.org/" },
     images: [
       "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop", // Gaming/Esports vibe
@@ -43,7 +43,7 @@ const projects: Project[] = [
     title: "OS & Networking Simulators",
     role: "CS 2200 Systems, Georgia Tech",
     stack: ["C", "pthreads"],
-    description: "Implemented a multi-CPU process scheduler with pthreads supporting FCFS, Round Robin, preemptive Priority, and SRTF, synchronizing a shared ready queue with mutexes and condition variables to eliminate race conditions. Built a reliable transport protocol over a lossy simulated network: packet segmentation and reassembly, checksums, ACK/NACK stop-and-wait with retransmission, and thread-safe sender/receiver threads with no memory leaks.",
+    description: "A multi-CPU process scheduler in C with pthreads (FCFS, Round Robin, preemptive Priority, SRTF), sharing a ready queue guarded by mutexes and condition variables. Also a reliable transport protocol over a lossy simulated network: segmentation and reassembly, checksums, and ACK/NACK stop-and-wait with retransmission.",
     links: {},
     images: [
       "https://images.unsplash.com/photo-1629654297299-c8506221ca97?q=80&w=2070&auto=format&fit=crop",
@@ -54,7 +54,7 @@ const projects: Project[] = [
     title: "Weight-Agnostic Forecasting",
     role: "Deep Learning Project, Georgia Tech",
     stack: ["PyTorch", "Python"],
-    description: "Trained neural networks for 24-hour electricity forecasting by learning which connections to keep, never updating a weight value; matched a published baseline (DLinear) and beat standard training by 4%. Built a reproducible pipeline with 450+ tests and 600+ experiment runs, reproducing published benchmarks within 0.1%.",
+    description: "Neural networks for electricity forecasting that learn which connections to keep instead of ever updating a weight. Matches a published baseline (DLinear) and beats standard training, in a fully reproducible, tested pipeline.",
     links: {},
     images: [
       "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=2070&auto=format&fit=crop",
@@ -65,7 +65,7 @@ const projects: Project[] = [
     title: "Privacy Pilot",
     role: "AI ATL 2024 Winner",
     stack: ["React", "FastAPI", "MongoDB", "Terraform", "AWS EC2", "Gemini/Claude API"],
-    description: "Shipped a Chrome extension scoring Terms & Conditions across 10 GDPR/CCPA risk factors. Built a FastAPI backend with MongoDB caching and Gemini/Claude fallback, deployed on AWS EC2 with Terraform.",
+    description: "Chrome extension that reads Terms & Conditions and flags GDPR/CCPA privacy risks. FastAPI backend with MongoDB caching and Gemini/Claude fallback, deployed on AWS EC2 with Terraform.",
     links: { devpost: "https://devpost.com/software/privacy-extension-your-privacy-rights-at-a-glance" },
     images: [
       "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop", // Tech/Cybersecurity vibe
@@ -98,7 +98,7 @@ const projects: Project[] = [
     title: "Contextual Computing Research",
     role: "Undergraduate Researcher",
     stack: ["Unity3D", "C#", "Meta Quest Pro", "XR Interaction Toolkit"],
-    description: "Developed Unity3D/C# eye-tracking pipeline for Meta Quest Pro capturing gaze data at 72-90Hz with sub-2° accuracy. Deployed in accessibility study with 200+ participants including RIT deaf/hard-of-hearing students. Enabled spatial captioning research for deaf/hard-of-hearing users.",
+    description: "Eye-tracking pipeline in Unity3D/C# for the Meta Quest Pro, used in an accessibility study with deaf and hard-of-hearing students at RIT to research spatial captioning.",
     links: { site: "https://researchexpo.ipat.gatech.edu/captioning-glass-captioning-eyeglasses-deaf-and-hard-hearing" },
     images: [
       "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=2078&auto=format&fit=crop",

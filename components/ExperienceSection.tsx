@@ -10,7 +10,6 @@ interface Experience {
   period: string;
   location: string;
   tagline?: string;
-  stats?: { value: string; label: string }[];
   stack: string[];
   highlights: { title: string; text: string }[];
   type: "work" | "education" | "research";
@@ -25,13 +24,7 @@ const experiences: Experience[] = [
     role: "Backend Engineering Intern",
     period: "Jan 2025 – Present",
     location: "Remote",
-    tagline: "AI-native crypto intelligence platform used by Gemini, Broadridge, GSR, and ADGM. Joined as a Frontend Engineering Intern in Spring 2025.",
-    stats: [
-      { value: "22", label: "Production workflows migrated" },
-      { value: "11", label: "Data providers unified" },
-      { value: "93s", label: "Nightly job, first attempt" },
-      { value: "145+", label: "PRs merged" }
-    ],
+    tagline: "Crypto intelligence platform used by Gemini, Broadridge, GSR, and ADGM. Started on the frontend in Spring 2025.",
     stack: ["DynamoDB", "SQS", "Lambda", "Fargate", "S3", "pydantic-ai", "Next.js", "React"],
     type: "work",
     link: "https://lockchain.ai",
@@ -39,24 +32,24 @@ const experiences: Experience[] = [
     color: "from-orange-500/15 to-amber-500/5",
     highlights: [
       {
-        title: "Durable workflow orchestrator",
-        text: "Primary engineer, co-designed with the CTO. Unified 4 siloed systems on DynamoDB, SQS, Lambda, and Fargate, and migrated 22 production data workflows across 11 providers."
+        title: "Workflow orchestrator",
+        text: "Built Lockchain's workflow orchestrator with the CTO, bringing separate data systems together on DynamoDB, SQS, Lambda, and Fargate, and moved our production data workflows onto it."
       },
       {
         title: "Crash-safe execution",
-        text: "Per-step checkpoints and S3-backed state let runs resume from the point of failure, pause for analyst review without holding compute, and restart from any step."
+        text: "Per-step checkpoints and S3-backed state, so runs pick up where they failed, pause for analyst review without holding compute, and restart from any step."
       },
       {
         title: "Production reliability",
-        text: "Traced a recurring nightly failure to premature Lambda retries and Fargate scale-in killing busy workers. The job now completes on the first attempt in 93 seconds."
+        text: "Tracked a recurring nightly failure down to premature Lambda retries and Fargate scale-in killing busy workers, and fixed both."
       },
       {
         title: "LLM search agent",
-        text: "Built with pydantic-ai and GPT-4.1-mini for the AI research pipeline. Reads snippets first and fetches only the most relevant pages, keeping low-value content out of context."
+        text: "Search agent for the AI research pipeline, built with pydantic-ai. It reads snippets first and only fetches the pages worth reading."
       },
       {
-        title: "Analyst Admin Portal",
-        text: "Built from scratch in Next.js and React to configure risk frameworks, review AI answers, approve AI-detected material events, and onboard assets."
+        title: "Analyst admin portal",
+        text: "Built the internal admin portal in Next.js and React, where analysts configure risk frameworks, review AI answers, approve flagged events, and onboard assets."
       }
     ]
   },
@@ -65,11 +58,7 @@ const experiences: Experience[] = [
     role: "Software Engineering Intern",
     period: "May 2024 – Aug 2024",
     location: "Remote",
-    tagline: "Enterprise ERP platform serving pharmaceutical clients.",
-    stats: [
-      { value: "500+", label: "Pharma client staff supported" },
-      { value: "On-site", label: "Forward-deployed at client facilities" }
-    ],
+    tagline: "Enterprise ERP platform for pharmaceutical companies.",
     stack: ["C#", "ADO.NET", "SQL", "Angular"],
     type: "work",
     link: "https://isuitesolutions.com",
@@ -78,11 +67,11 @@ const experiences: Experience[] = [
     highlights: [
       {
         title: "Report & print engines",
-        text: "Built configurable report and print engines with C#, ADO.NET, SQL stored procedures, and Angular, supporting reporting workflows for 500+ staff at pharmaceutical clients."
+        text: "Built configurable report and print engines in C#, ADO.NET, SQL stored procedures, and Angular."
       },
       {
-        title: "Forward-deployed",
-        text: "On-site at client facilities, configured dashboards and widgets to match how staff actually used the software, working directly with end users."
+        title: "On-site with clients",
+        text: "Worked at client facilities, setting up dashboards and widgets around how staff actually used the software."
       }
     ]
   }
@@ -161,22 +150,7 @@ export default function ExperienceSection() {
                       </p>
                     )}
 
-                    <div className="mt-auto pt-8 space-y-6">
-                      {exp.stats && (
-                        <div className="grid grid-cols-2 gap-3">
-                          {exp.stats.map((stat) => (
-                            <div key={stat.label} className="rounded-xl border border-white/10 bg-black/30 px-4 py-3">
-                              <div className="text-2xl md:text-3xl font-light text-white tracking-tight">
-                                {stat.value}
-                              </div>
-                              <div className="text-[10px] uppercase tracking-widest text-white/50 mt-1 leading-snug">
-                                {stat.label}
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      )}
-
+                    <div className="mt-auto pt-8">
                       <div className="flex flex-wrap gap-2">
                         {exp.stack.map((tech) => (
                           <span
